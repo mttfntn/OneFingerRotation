@@ -1,13 +1,13 @@
 //
 //  KnobRotation.swift
-//  One-Finger-Rotation-Framework
+//  OneFingerRotation Knob
 //
 //  Created by Matteo Fontana on 23/04/23.
 //
 
 import SwiftUI
 
-public struct KnobInertia: ViewModifier {
+public struct OFKnob: ViewModifier {
     
     
     @State private var rotationAngle: Angle = .degrees(0)
@@ -228,7 +228,7 @@ struct FrameSizeKeyKnobInertia: PreferenceKey {
 }
 
 public extension View {
-    func knobInertia(
+    func oFKnob(
         knobValue: Binding<Double>,
         minAngle: Double? = nil,
         maxAngle: Double? = nil,
@@ -238,7 +238,7 @@ public extension View {
         animation: Animation? = nil,
         stoppingAnimation: Binding<Bool>? = nil) -> some View
     {
-        let effect = KnobInertia(
+        let effect = OFKnob(
             knobValue: knobValue,
             minAngle: minAngle ?? -90,
             maxAngle: maxAngle ?? 90,
